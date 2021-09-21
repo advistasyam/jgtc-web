@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
       {/* <img src="/images/Navbar/NavSvg.svg" alt="gambar" /> */}
       <div tw="flex flex-row space-x-4 items-center">
         <p tw="text-white text-xl text-graydim cursor-default">FOLLOW US</p>
-        <a href="https://youtube.com/JGTCofficial" target="_blank">
+        <a href="https://youtube.com/JGTCofficial" target="_blank" rel="noreferrer">
           <Image
             src="/images/Navbar/youtube.svg"
             alt="youtube link"
@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
             height={36}
           />
         </a>
-        <a href="https://twitter.com/JGTCfestival" target="_blank">
+        <a href="https://twitter.com/JGTCfestival" target="_blank" rel="noreferrer">
           <Image
             src="/images/Navbar/twitter.svg"
             alt="twitter link"
@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
             height={36}
           />
         </a>
-        <a href="https://instagram.com/jgtcfestival" target="_blank">
+        <a href="https://instagram.com/jgtcfestival" target="_blank" rel="noreferrer">
           <Image
             src="/images/Navbar/instagram.svg"
             alt="instagram link"
@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
             height={36}
           />
         </a>
-        <a href="https://facebook.com/jgtcfestival" target="_blank">
+        <a href="https://facebook.com/jgtcfestival" target="_blank" rel="noreferrer">
           <Image
             src="/images/Navbar/fb-svg.svg"
             alt="facebook link"
