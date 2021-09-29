@@ -5,18 +5,20 @@ import { css } from "twin.macro"
 interface WidthImageProps {
   url: string
   width: string
+  alt?: string
+  cssextend?: string
 }
 
-const WidthImage: React.FC<WidthImageProps> = ({ url, width }) => {
+const WidthImage: React.FC<WidthImageProps> = ({ url, width, alt="", cssextend="" }) => {
   return (
     <div
-      css={css`
+      css={[css`
         object-fit: contain;
         div {
           position: unset !important;
           width: ${`${width}`}px;
         }
-      `}
+      `, css`${`${cssextend}`}`]}
     >
       <Image
         src={url}
@@ -27,6 +29,7 @@ const WidthImage: React.FC<WidthImageProps> = ({ url, width }) => {
           position: relative !important;
           width: 100% !important;
         `}
+        alt={alt}
       />
     </div>
   )

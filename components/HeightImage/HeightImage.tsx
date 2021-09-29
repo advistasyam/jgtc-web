@@ -5,9 +5,10 @@ import { css } from "twin.macro"
 interface HeightImageProps {
   url: string
   height: string
+  alt?: string
 }
 
-const HeightImage: React.FC<HeightImageProps> = ({ url, height }) => {
+const HeightImage: React.FC<HeightImageProps> = ({ url, height, alt="" }) => {
   return (
     <div
       css={css`
@@ -27,6 +28,7 @@ const HeightImage: React.FC<HeightImageProps> = ({ url, height }) => {
           position: relative !important;
           height: 100% !important;
         `}
+        alt={alt}
       />
     </div>
   )

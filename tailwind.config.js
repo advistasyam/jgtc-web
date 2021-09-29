@@ -11,7 +11,8 @@ module.exports = {
         mainblack: "#070707",
         graydim: "#6d6d6d",
         darkblue: "	#303f84",
-        wheat: "#F0E2BD"
+        wheat: "#F0E2BD",
+        olivegreen: "#50713c"
       },
       margin: {
         "section": "100px"
