@@ -6,18 +6,19 @@ interface HeightImageProps {
   url: string
   height: string
   alt?: string
+  cssextend?: string
 }
 
-const HeightImage: React.FC<HeightImageProps> = ({ url, height, alt="" }) => {
+const HeightImage: React.FC<HeightImageProps> = ({ url, height, alt="", cssextend="" }) => {
   return (
     <div
-      css={css`
+      css={[css`
         object-fit: contain;
         div {
           position: unset !important;
           height: ${`${height}`}px;
         }
-      `}
+      `, css`${`${cssextend}`}`]}
     >
       <Image
         src={url}

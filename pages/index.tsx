@@ -69,12 +69,22 @@ export default function Home() {
             height: 43px;
           `}
         >
+          <div
+            css={[
+              css`
+                position: absolute;
+                bottom: 10%;
+                left: 40%;
+                width: 6px;
+                height: 27px;
+                transform: skew(45deg);
+                background: white;
+              `,
+              !mute && tw`hidden`,
+            ]}
+          />
           <WidthImage
-            url={
-              mute
-                ? "/images/Landing/volume_off.svg"
-                : "/images/Landing/volume_up.svg"
-            }
+            url={"/images/Landing/volume_up.svg"}
             alt="speaker button"
             width="32"
             cssextend={`
@@ -317,15 +327,7 @@ export default function Home() {
             />
           </Carousel>
         </div>
-
-        {/* <Carousel responsive={responsive}>
-          <div tw="text-white">Item 1</div>
-          <div tw="text-white">Item 2</div>
-          <div tw="text-white">Item 3</div>
-          <div tw="text-white">Item 4</div>
-        </Carousel> */}
       </div>
-
       <Footer />
     </div>
   )
