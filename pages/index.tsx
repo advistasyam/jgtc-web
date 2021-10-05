@@ -1,36 +1,17 @@
-import tw, { css } from "twin.macro"
+import React from "react"
+import { css } from "twin.macro"
 import { useState } from "react"
 import Head from "next/head"
 import HeightImage from "../components/HeightImage/HeightImage"
 import WidthImage from "../components/WidthImage/WidthImage"
 import { Navbar } from "../components/Navbar"
 import { Footer } from "../components/Footer"
-import Carousel from "react-multi-carousel"
-import "react-multi-carousel/lib/styles.css"
+// import "react-multi-carousel/lib/styles.css"
+import { Example } from "../components/Carousel/Carousel"
+import fg from "fast-glob"
 
-export default function Home() {
+export default function Home({lineup}: any) {
   const [mute, setMute] = useState(true)
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1366 },
-      items: 5,
-      slidesToSlide: 2,
-    },
-    tablet: {
-      breakpoint: { max: 1366, min: 464 },
-      items: 4,
-      slidesToSlide: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
-  }
 
   return (
     <div>
@@ -73,6 +54,7 @@ export default function Home() {
             css={[
               css`
                 position: absolute;
+                transition: transform 0.3s;
                 bottom: 10%;
                 left: 40%;
                 width: 6px;
@@ -80,7 +62,11 @@ export default function Home() {
                 transform: skew(45deg);
                 background: white;
               `,
-              !mute && tw`hidden`,
+              !mute &&
+                css`
+                  transform: skew(0deg);
+                  transform: scale(0.5);
+                `,
             ]}
           />
           <WidthImage
@@ -107,13 +93,23 @@ export default function Home() {
                 cssextend="margin-bottom: -15px"
               />
             </div>
-            <div
-              tw="w-full mt-4"
-              css={css`
-                height: 600px;
-                background-color: rgb(192, 83, 40);
-              `}
-            ></div>
+            <a
+              href="https://kitabisa.com/campaign/jgtcpedulisesama"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <HeightImage
+                url="/images/Landing/sponsorpage/kitabisa.png"
+                height="600"
+                alt="Kitabisa JGTC Link"
+                cssextend={`
+                  transition: transform .2s;
+                  :hover {
+                    transform: scale(1.1);
+                  }
+                `}
+              />
+            </a>
           </div>
         </div>
         <div
@@ -178,157 +174,22 @@ export default function Home() {
           Reminiscing musicians from previous Jazz Goes to Campus Festivals
         </h2>
 
-        <div
-          tw="mt-section px-6 flex lg:hidden space-x-6 items-center justify-start"
-          css={css`
-            flex-wrap: nowrap;
-            overflow-x: scroll;
-            ::-webkit-scrollbar {
-              width: 0; /* Remove scrollbar space */
-              background: transparent; /* Optional: just make scrollbar invisible */
-            }
-            scrollbar-width: none;
-          `}
-        >
-          <div
-            tw="flex items-center justify-center space-x-6"
-            css={css`
-              flex: 0 0 auto;
-              overflow-x: hidden;
-            `}
-          >
-            <HeightImage
-              url="/images/Landing/orange.png"
-              height="260"
-              alt="Artis 1"
-            />
-            <HeightImage
-              url="/images/Landing/green.png"
-              height="260"
-              alt="Artis 2"
-            />
-            <HeightImage
-              url="/images/Landing/orange.png"
-              height="260"
-              alt="Artis 3"
-            />
-            <HeightImage
-              url="/images/Landing/green.png"
-              height="260"
-              alt="Artis 4"
-            />
-          </div>
-        </div>
-
-        {/* Desktop Page */}
-        {/* <div
-          tw="mt-section container mx-auto hidden lg:flex space-x-6 items-center justify-start"
-          css={css`
-            flex-wrap: nowrap;
-            overflow-x: scroll;
-            ::-webkit-scrollbar {
-              width: 0;
-              background: transparent;
-            }
-            scrollbar-width: none;
-          `}
-        >
-          <div
-            tw="flex items-center justify-center space-x-6"
-            css={css`
-              flex: 0 0 auto;
-              overflow-x: hidden;
-            `}
-          >
-            <HeightImage
-              url="/images/Landing/orange.png"
-              height="260"
-              alt="Artis 1"
-            />
-            <HeightImage
-              url="/images/Landing/green.png"
-              height="260"
-              alt="Artis 2"
-            />
-            <HeightImage
-              url="/images/Landing/orange.png"
-              height="260"
-              alt="Artis 3"
-            />
-            <HeightImage
-              url="/images/Landing/green.png"
-              height="260"
-              alt="Artis 4"
-            />
-            <HeightImage
-              url="/images/Landing/orange.png"
-              height="260"
-              alt="Artis 1"
-            />
-            <HeightImage
-              url="/images/Landing/green.png"
-              height="260"
-              alt="Artis 2"
-            />
-            <HeightImage
-              url="/images/Landing/orange.png"
-              height="260"
-              alt="Artis 3"
-            />
-            <HeightImage
-              url="/images/Landing/green.png"
-              height="260"
-              alt="Artis 4"
-            />
-          </div>
-        </div> */}
-
-        <div tw="mt-section hidden lg:block relative px-pcontainer">
-          <Carousel responsive={responsive} renderButtonGroupOutside={true}>
-            <HeightImage
-              url="/images/Landing/orange.png"
-              height="260"
-              alt="Artis 1"
-            />
-            <HeightImage
-              url="/images/Landing/green.png"
-              height="260"
-              alt="Artis 2"
-            />
-            <HeightImage
-              url="/images/Landing/orange.png"
-              height="260"
-              alt="Artis 3"
-            />
-            <HeightImage
-              url="/images/Landing/green.png"
-              height="260"
-              alt="Artis 4"
-            />
-            <HeightImage
-              url="/images/Landing/orange.png"
-              height="260"
-              alt="Artis 1"
-            />
-            <HeightImage
-              url="/images/Landing/green.png"
-              height="260"
-              alt="Artis 2"
-            />
-            <HeightImage
-              url="/images/Landing/orange.png"
-              height="260"
-              alt="Artis 3"
-            />
-            <HeightImage
-              url="/images/Landing/green.png"
-              height="260"
-              alt="Artis 4"
-            />
-          </Carousel>
-        </div>
+        <Example lineup={lineup} />
       </div>
+
       <Footer />
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const lineup = (await fg(["public/images/Landing/pastlineup/*"] , {
+    onlyFiles: true,
+  })).map(val => val.replace("public/", "/"))
+
+  return {
+    props: {
+      lineup
+    }
+  }
 }

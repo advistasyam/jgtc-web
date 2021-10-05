@@ -18,6 +18,7 @@
 
 html {
   font-family: "Futura Condensed Bold" !important;
+  scroll-behavior: smooth;
 }
 
 body {
