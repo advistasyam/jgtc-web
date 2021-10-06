@@ -10,7 +10,7 @@ import { Footer } from "../components/Footer"
 import { Example } from "../components/Carousel/Carousel"
 import fg from "fast-glob"
 
-export default function Home({lineup}: any) {
+export default function Home({ lineup }: any) {
   const [mute, setMute] = useState(true)
 
   return (
@@ -35,9 +35,8 @@ export default function Home({lineup}: any) {
             width: 100vw;
             object-fit: cover;
           `}
-        >
-          <source src="/videos/landing/Teaser-44th-JGTC.mp4" type="video/mp4" />
-        </video>
+          src="/videos/landing/Teaser-44th-JGTC.mp4"
+        />
         <div
           onClick={() => setMute(!mute)}
           tw="text-white cursor-pointer border-4 border-white rounded-full"
@@ -183,13 +182,15 @@ export default function Home({lineup}: any) {
 }
 
 export async function getStaticProps() {
-  const lineup = (await fg(["public/images/Landing/pastlineup/*"] , {
-    onlyFiles: true,
-  })).map(val => val.replace("public/", "/"))
+  const lineup = (
+    await fg(["public/images/Landing/pastlineup/*"], {
+      onlyFiles: true,
+    })
+  ).map(val => val.replace("public/", "/"))
 
   return {
     props: {
-      lineup
-    }
+      lineup,
+    },
   }
 }
