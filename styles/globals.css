@@ -16,9 +16,22 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Futura Bold";
+  src: url("/fonts/Futura-Bold.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura Condensed Medium";
+  src: url("/fonts/Futura-CondensedMedium.otf") format("opentype");
+  font-display: swap;
+}
+
 html {
   font-family: "Futura Condensed Bold" !important;
   scroll-behavior: smooth;
+  background-color: #070707;
 }
 
 body {

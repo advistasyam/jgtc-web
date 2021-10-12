@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
     <div
       tw="bg-mainblack overflow-x-hidden"
       css={css`
-        padding-top: 180px;
+        margin-top: 200px;
       `}
     >
       <HeightImage
