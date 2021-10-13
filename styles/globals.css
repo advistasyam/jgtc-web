@@ -23,6 +23,12 @@
 }
 
 @font-face {
+  font-family: "Futura Medium";
+  src: url("/fonts/Futura-Medium.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Futura Condensed Medium";
   src: url("/fonts/Futura-CondensedMedium.otf") format("opentype");
   font-display: swap;

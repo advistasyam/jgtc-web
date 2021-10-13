@@ -15,6 +15,10 @@ const VideoLanding: React.FC = () => {
           height: 100vh;
           width: 100vw;
           object-fit: cover;
+
+          @media screen and (max-width: 767px) {
+            padding-top: 50px;
+          }
         `}
         src="/videos/landing/Teaser-44th-JGTC.mp4"
       />

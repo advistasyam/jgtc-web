@@ -62,14 +62,18 @@ export const Example = ({ lineup }: any) => {
 
   return (
     <div
-      tw="overflow-hidden flex items-center justify-center relative container mx-auto pt-12 px-pcontainer"
+      tw="overflow-hidden flex items-center justify-center relative container mx-auto pt-6 md:pt-12 px-pcontainer"
       css={css`
         height: 300px;
+
+        @media screen and (max-width: 767px) {
+          height: 400px;
+        }
       `}
     >
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
-          tw="absolute flex items-center justify-start space-x-6"
+          tw="absolute flex flex-wrap md:flex-nowrap items-center justify-center gap-2 md:gap-0 space-x-0 md:space-x-6"
           key={page}
           // src={images[imageIndex]}
           custom={direction}
@@ -99,36 +103,70 @@ export const Example = ({ lineup }: any) => {
             height="260"
             alt="Line up artist"
             undragable={true}
+            cssextend={`
+            @media screen and (max-width: 767px) {
+              object-fit: contain;
+              div {
+                position: unset !important;
+                height: 150px;
+              }
+            }`}
           />
           <HeightImage
             url={lineup[imageIndex + 1]}
             height="260"
             alt="Line up artist"
             undragable={true}
+            cssextend={`
+            @media screen and (max-width: 767px) {
+              object-fit: contain;
+              div {
+                position: unset !important;
+                height: 150px;
+              }
+            }`}
           />
           <HeightImage
             url={lineup[imageIndex + 2]}
             height="260"
             alt="Line up artist"
             undragable={true}
+            cssextend={`
+            @media screen and (max-width: 767px) {
+              object-fit: contain;
+              div {
+                position: unset !important;
+                height: 150px;
+              }
+            }`}
           />
           <HeightImage
             url={lineup[imageIndex + 3]}
             height="260"
             alt="Line up artist"
             undragable={true}
+            cssextend={`
+            @media screen and (max-width: 767px) {
+              object-fit: contain;
+              div {
+                position: unset !important;
+                height: 150px;
+              }
+            }`}
           />
         </motion.div>
       </AnimatePresence>
       <div
         onClick={() => paginate(-1)}
-        tw="text-white absolute left-10 text-4xl cursor-pointer"
+        tw="text-white absolute left-5 md:left-0 xl:left-10 text-4xl cursor-pointer"
+        css={css`z-index: 5;`}
       >
         &lt;
       </div>
       <div
         onClick={() => paginate(1)}
-        tw="text-white absolute right-10 text-4xl cursor-pointer"
+        tw="text-white absolute right-5 md:right-0 xl:right-10 text-4xl cursor-pointer"
+        css={css`z-index: 5;`}
       >
         &gt;
       </div>

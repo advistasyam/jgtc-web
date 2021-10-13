@@ -13,12 +13,11 @@
     "@emotion/react": "^11.4.0",
     "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.3.0",
-    "fast-glob": "^3.2.7",
     "framer-motion": "^4.1.17",
     "next": "^11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-multi-carousel": "^2.6.5",
+    "react-intersection-observer": "^8.32.1",
     "typeit-react": "^2.0.3"
   },
   "devDependencies": {

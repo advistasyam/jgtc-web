@@ -7,6 +7,7 @@ module.exports = {
         drukwide: ["Druk Wide", "sans-serif"],
         druk: ["Druk", "sans-serif"],
         futura: ["Futura Bold", "sans-serif"],
+        futuramedium: ["Futura Medium", "sans-serif"],
         condensedmedium: ["Futura Condensed Medium", "sans-serif"]
       },
       colors: {

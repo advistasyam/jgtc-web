@@ -6,10 +6,6 @@ import { VideoLanding } from "@components/Landing/VideoLanding"
 import { PastLineUp } from "@components/Landing/PastLineUp"
 import { Kitabisa } from "@components/Landing/Kitabisa"
 
-// Delete this lib later
-// import "react-multi-carousel/lib/styles.css"
-// import fg from "fast-glob"
-
 export default function Home() {
 
   return (
@@ -22,8 +18,9 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
 
+      <Navbar />
+      
       <VideoLanding />
 
       <Kitabisa />
