@@ -30,6 +30,20 @@ const Kitabisa: React.FC = () => {
     },
   }
 
+  const imageIluni = {
+    visible: { x: 0 },
+    hidden: {
+      x: -250
+    },
+  }
+
+  const imageNakes = {
+    visible: { x: 0 },
+    hidden: {
+      x: 250
+    },
+  }
+
   return (
     <div tw="bg-mainblack relative mt-24">
       <div tw="absolute top-0 left-0">
@@ -148,7 +162,7 @@ const Kitabisa: React.FC = () => {
         </a>
       </motion.div>
 
-      <div tw="flex items-start justify-between md:justify-center mt-12">
+      <div tw="flex items-start justify-between md:justify-center mt-12 overflow-x-hidden">
         <div>
           <p tw="text-left md:text-center font-condensedmedium text-white text-xs md:text-lg xl:text-3xl text-wheat pl-4 md:pl-0">
             Saksikan <span tw="text-orangejeruk">JGTC Showcase</span>,{" "}
@@ -190,23 +204,31 @@ const Kitabisa: React.FC = () => {
               </h1>
             </a>
           </div>
-          <img
-            src="/images/Landing/sponsorpage/iluni.png"
+          <motion.img
+            src="/images/Landing/sponsorpage/Iluni.png"
             alt="iluni"
             css={css`
               height: 120px;
             `}
             tw="block md:hidden mt-2 pl-4"
+            initial={"hidden"}
+            animate={inView ? "visible" : "hidden"}
+            variants={imageIluni}
+            transition={{ duration: 1, ease: "easeOut", delay: 2.8 }}
           />
         </div>
 
-        <img
+        <motion.img
           src="/images/Landing/sponsorpage/3photo.png"
           alt="3photo"
           css={css`
             width: 120px;
           `}
           tw="block md:hidden"
+          initial={"hidden"}
+          animate={inView ? "visible" : "hidden"}
+          variants={imageNakes}
+          transition={{ duration: 1, ease: "easeOut", delay: 2.8 }}
         />
       </div>
     </div>

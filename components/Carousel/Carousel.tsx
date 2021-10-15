@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { css } from "twin.macro"
+import { useMediaQuery } from "react-responsive"
+import tw, { css } from "twin.macro"
 // import { wrap } from "popmotion"
 // import { images } from "./image-data"
 import HeightImage from "../HeightImage/HeightImage"
@@ -40,6 +41,8 @@ const swipePower = (offset: number, velocity: number) => {
 export const Example = ({ lineup }: any) => {
   const [[page, direction], setPage] = useState([0, 0])
 
+  const isMobile = useMediaQuery({ query: "(max-width: 465px)" })
+
   const findIndex = (page: number) => {
     // Page = {0,1,2,....}
     // Output Needed = { 0 = 0-3, 1 = 4-7, ... }
@@ -67,13 +70,13 @@ export const Example = ({ lineup }: any) => {
         height: 300px;
 
         @media screen and (max-width: 767px) {
-          height: 400px;
+          height: 430px;
         }
       `}
     >
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
-          tw="absolute flex flex-wrap md:flex-nowrap items-center justify-center gap-2 md:gap-0 space-x-0 md:space-x-6"
+          tw="absolute flex flex-wrap md:flex-nowrap items-center justify-center gap-2 md:gap-0 space-x-0 md:space-x-6 mb-6 md:mb-0"
           key={page}
           // src={images[imageIndex]}
           custom={direction}
@@ -127,7 +130,7 @@ export const Example = ({ lineup }: any) => {
             }`}
           />
           <HeightImage
-            url={lineup[imageIndex + 2]}
+            url={lineup[!isMobile ? imageIndex + 2 : imageIndex + 3]}
             height="260"
             alt="Line up artist"
             undragable={true}
@@ -141,7 +144,7 @@ export const Example = ({ lineup }: any) => {
             }`}
           />
           <HeightImage
-            url={lineup[imageIndex + 3]}
+            url={lineup[!isMobile ? imageIndex + 3 : imageIndex + 2]}
             height="260"
             alt="Line up artist"
             undragable={true}
@@ -158,15 +161,44 @@ export const Example = ({ lineup }: any) => {
       </AnimatePresence>
       <div
         onClick={() => paginate(-1)}
-        tw="text-white absolute left-5 md:left-0 xl:left-10 text-4xl cursor-pointer"
-        css={css`z-index: 5;`}
+        tw="text-white absolute left-5 md:left-0 xl:left-10 text-4xl cursor-pointer hidden sm:block"
+        css={css`
+          z-index: 20;
+        `}
       >
         &lt;
       </div>
+
+      <div
+        onClick={() => paginate(-1)}
+        tw="text-white absolute left-5 md:left-0 xl:left-10 text-4xl cursor-pointer bottom-0 pb-2 px-3 mt-2 bg-white text-mainblack opacity-30 rounded-xl block sm:hidden"
+        css={css`
+          z-index: 20;
+          left: 35%;
+          -webkit-tap-highlight-color: transparent;
+        `}
+      >
+        &lt;
+      </div>
+
       <div
         onClick={() => paginate(1)}
-        tw="text-white absolute right-5 md:right-0 xl:right-10 text-4xl cursor-pointer"
-        css={css`z-index: 5;`}
+        tw="text-white absolute right-5 md:right-0 xl:right-10 text-4xl cursor-pointer hidden sm:block"
+        css={css`
+          z-index: 20;
+        `}
+      >
+        &gt;
+      </div>
+
+      <div
+        onClick={() => paginate(1)}
+        tw="text-white absolute right-5 md:right-0 xl:right-10 text-4xl cursor-pointer bottom-0 pb-2 px-3 mt-2 bg-white text-mainblack opacity-30 rounded-xl block sm:hidden"
+        css={css`
+          z-index: 20;
+          right: 35%;
+          -webkit-tap-highlight-color: transparent;
+        `}
       >
         &gt;
       </div>

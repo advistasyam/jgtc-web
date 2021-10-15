@@ -1,6 +1,6 @@
 import React from "react"
 import Image from "next/image"
-import "twin.macro"
+import {css} from "twin.macro"
 
 const SocialMedia: React.FC = () => {
   return (
@@ -13,7 +13,7 @@ const SocialMedia: React.FC = () => {
           rel="noreferrer"
         >
           <Image
-            src="/images/Navbar/youtube.svg"
+            src="/images/Navbar/youtube.png"
             alt="youtube link"
             width={36}
             height={36}
@@ -25,7 +25,7 @@ const SocialMedia: React.FC = () => {
           rel="noreferrer"
         >
           <Image
-            src="/images/Navbar/twitter.svg"
+            src="/images/Navbar/twitter.png"
             alt="twitter link"
             width={36}
             height={36}
@@ -37,7 +37,7 @@ const SocialMedia: React.FC = () => {
           rel="noreferrer"
         >
           <Image
-            src="/images/Navbar/instagram.svg"
+            src="/images/Navbar/instagram.png"
             alt="instagram link"
             width={36}
             height={36}
@@ -49,7 +49,7 @@ const SocialMedia: React.FC = () => {
           rel="noreferrer"
         >
           <Image
-            src="/images/Navbar/fb-svg.svg"
+            src="/images/Navbar/fb-svg.png"
             alt="facebook link"
             width={36}
             height={36}
@@ -58,7 +58,7 @@ const SocialMedia: React.FC = () => {
       </div>
 
       {/* Mobile Version */}
-      <div tw="block md:hidden fixed bottom-3 right-3 z-10">
+      <div tw="block md:hidden fixed left-2 z-10" css={css`top: 40%;`}>
         <div tw="flex flex-col space-y-2">
           <a
             href="https://youtube.com/JGTCofficial"
@@ -66,10 +66,11 @@ const SocialMedia: React.FC = () => {
             rel="noreferrer"
           >
             <Image
-              src="/images/Navbar/youtube.svg"
+              src="/images/Navbar/youtube.png"
               alt="youtube link"
               width={28}
               height={28}
+              tw="bg-mainblack rounded-full"
             />
           </a>
           <a
@@ -78,7 +79,7 @@ const SocialMedia: React.FC = () => {
             rel="noreferrer"
           >
             <Image
-              src="/images/Navbar/twitter.svg"
+              src="/images/Navbar/twitter.png"
               alt="twitter link"
               width={28}
               height={28}
@@ -90,7 +91,7 @@ const SocialMedia: React.FC = () => {
             rel="noreferrer"
           >
             <Image
-              src="/images/Navbar/instagram.svg"
+              src="/images/Navbar/instagram.png"
               alt="instagram link"
               width={28}
               height={28}
@@ -102,7 +103,7 @@ const SocialMedia: React.FC = () => {
             rel="noreferrer"
           >
             <Image
-              src="/images/Navbar/fb-svg.svg"
+              src="/images/Navbar/fb-svg.png"
               alt="facebook link"
               width={28}
               height={28}
