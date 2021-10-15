@@ -44,8 +44,15 @@ const Kitabisa: React.FC = () => {
     },
   }
 
+  const imageNakesDesktop = {
+    visible: { x: 0 },
+    hidden: {
+      x: 800
+    },
+  }
+
   return (
-    <div tw="bg-mainblack relative mt-24">
+    <div tw="bg-mainblack relative mt-24 overflow-hidden">
       <div tw="absolute top-0 left-0">
         <HeightImage
           url="/images/Footer/LOGO.png"
@@ -68,10 +75,14 @@ const Kitabisa: React.FC = () => {
       </div>
       <div tw="absolute right-0 h-full">
         <div tw="flex items-center justify-end h-full">
-          <img
+          <motion.img
             src="/images/Landing/sponsorpage/RightSide.png"
             alt="gambar"
             tw="hidden md:block h-3/4 xl:h-full"
+            initial={"hidden"}
+            animate={inView ? "visible" : "hidden"}
+            variants={imageNakesDesktop}
+            transition={{ duration: 1, ease: "easeOut", delay: 3.5 }}
           />
         </div>
       </div>
