@@ -52,7 +52,7 @@ const Kitabisa: React.FC = () => {
   }
 
   return (
-    <div tw="bg-mainblack relative mt-24 overflow-hidden">
+    <div tw="bg-mainblack relative mt-12 overflow-hidden">
       <div tw="absolute top-0 left-0">
         <HeightImage
           url="/images/Footer/LOGO.png"

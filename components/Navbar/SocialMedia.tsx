@@ -64,6 +64,15 @@ const SocialMedia: React.FC = () => {
             href="https://youtube.com/JGTCofficial"
             target="_blank"
             rel="noreferrer"
+            css={css`
+              div {
+                box-shadow: 2px 2px 3px  rgba(0,0,0,0.7);
+                -moz-box-shadow: 2px 2px 3px  rgba(0,0,0,0.7);
+                -webkit-box-shadow: 2px 2px 3px  rgba(0,0,0,0.7);
+                -o-box-shadow: 2px 2px 3px  rgba(0,0,0,0.7);
+                border-radius:25px;
+              }
+            `}
           >
             <Image
               src="/images/Navbar/youtube.png"
@@ -77,6 +86,15 @@ const SocialMedia: React.FC = () => {
             href="https://twitter.com/JGTCfestival"
             target="_blank"
             rel="noreferrer"
+            css={css`
+              div {
+                box-shadow: 2px 2px 3px  rgba(0,0,0,0.7);
+                -moz-box-shadow: 2px 2px 3px  rgba(0,0,0,0.7);
+                -webkit-box-shadow: 2px 2px 3px  rgba(0,0,0,0.7);
+                -o-box-shadow: 2px 2px 3px  rgba(0,0,0,0.7);
+                border-radius:25px;
+              }
+            `}
           >
             <Image
               src="/images/Navbar/twitter.png"
@@ -89,6 +107,15 @@ const SocialMedia: React.FC = () => {
             href="https://instagram.com/jgtcfestival"
             target="_blank"
             rel="noreferrer"
+            css={css`
+              div {
+                box-shadow: 2px 2px 3px  rgba(0,0,0,0.7);
+                -moz-box-shadow: 2px 2px 3px  rgba(0,0,0,0.7);
+                -webkit-box-shadow: 2px 2px 3px  rgba(0,0,0,0.7);
+                -o-box-shadow: 2px 2px 3px  rgba(0,0,0,0.7);
+                border-radius:25px;
+              }
+            `}
           >
             <Image
               src="/images/Navbar/instagram.png"
@@ -101,6 +128,15 @@ const SocialMedia: React.FC = () => {
             href="https://facebook.com/jgtcfestival"
             target="_blank"
             rel="noreferrer"
+            css={css`
+              div {
+                box-shadow: 2px 2px 3px  rgba(0,0,0,0.7);
+                -moz-box-shadow: 2px 2px 3px  rgba(0,0,0,0.7);
+                -webkit-box-shadow: 2px 2px 3px  rgba(0,0,0,0.7);
+                -o-box-shadow: 2px 2px 3px  rgba(0,0,0,0.7);
+                border-radius:25px;
+              }
+            `}
           >
             <Image
               src="/images/Navbar/fb-svg.png"

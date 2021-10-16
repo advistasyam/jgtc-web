@@ -65,7 +65,7 @@ export const Example = ({ lineup }: any) => {
 
   return (
     <div
-      tw="overflow-hidden flex items-center justify-center relative container mx-auto pt-6 md:pt-12 px-pcontainer"
+      tw="overflow-hidden flex items-center justify-center relative container mx-auto pt-0 md:pt-12"
       css={css`
         height: 300px;
 
@@ -76,7 +76,17 @@ export const Example = ({ lineup }: any) => {
     >
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
-          tw="absolute flex flex-wrap md:flex-nowrap items-center justify-center gap-2 md:gap-0 space-x-0 md:space-x-6 mb-6 md:mb-0"
+          tw="absolute flex flex-wrap md:flex-nowrap items-center justify-center space-x-0 md:space-x-6 pb-6 md:pb-0"
+          css={css`
+            @media screen and (max-width: 470px) {
+              height: 336px;
+            }
+
+            @media screen and (max-width: 320px) {
+              height: unset !important:
+              // width: 100%;
+            }
+          `}
           key={page}
           // src={images[imageIndex]}
           custom={direction}
@@ -108,10 +118,18 @@ export const Example = ({ lineup }: any) => {
             undragable={true}
             cssextend={`
             @media screen and (max-width: 767px) {
-              object-fit: contain;
+              padding: 3px;
               div {
                 position: unset !important;
                 height: 150px;
+              }
+            }
+            
+            @media screen and (max-width: 321px) {
+              padding: 2px;
+              div {
+                position: unset !important;
+                height: 140px;
               }
             }`}
           />
@@ -122,10 +140,18 @@ export const Example = ({ lineup }: any) => {
             undragable={true}
             cssextend={`
             @media screen and (max-width: 767px) {
-              object-fit: contain;
+              padding: 3px;
               div {
                 position: unset !important;
                 height: 150px;
+              }
+            }
+            
+            @media screen and (max-width: 321px) {
+              padding: 2px;
+              div {
+                position: unset !important;
+                height: 140px;
               }
             }`}
           />
@@ -136,10 +162,18 @@ export const Example = ({ lineup }: any) => {
             undragable={true}
             cssextend={`
             @media screen and (max-width: 767px) {
-              object-fit: contain;
+              padding: 3px;
               div {
                 position: unset !important;
                 height: 150px;
+              }
+            }
+            
+            @media screen and (max-width: 321px) {
+              padding: 2px;
+              div {
+                position: unset !important;
+                height: 140px;
               }
             }`}
           />
@@ -150,10 +184,18 @@ export const Example = ({ lineup }: any) => {
             undragable={true}
             cssextend={`
             @media screen and (max-width: 767px) {
-              object-fit: contain;
+              padding: 3px;
               div {
                 position: unset !important;
                 height: 150px;
+              }
+            }
+            
+            @media screen and (max-width: 321px) {
+              padding: 2px;
+              div {
+                position: unset !important;
+                height: 140px;
               }
             }`}
           />
