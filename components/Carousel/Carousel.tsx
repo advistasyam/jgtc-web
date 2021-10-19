@@ -4,7 +4,7 @@ import { useMediaQuery } from "react-responsive"
 import tw, { css } from "twin.macro"
 // import { wrap } from "popmotion"
 // import { images } from "./image-data"
-import HeightImage from "../HeightImage/HeightImage"
+import { CarouselImage } from "@components/Carousel/CarouselImage"
 
 const variants = {
   enter: (direction: number) => {
@@ -38,7 +38,7 @@ const swipePower = (offset: number, velocity: number) => {
   return Math.abs(offset) * velocity
 }
 
-export const Example = ({ lineup }: any) => {
+export const Carousel = ({ lineup }: any) => {
   const [[page, direction], setPage] = useState([0, 0])
 
   const isMobile = useMediaQuery({ query: "(max-width: 465px)" })
@@ -111,94 +111,10 @@ export const Example = ({ lineup }: any) => {
             }
           }}
         >
-          <HeightImage
-            url={lineup[imageIndex]}
-            height="260"
-            alt="Line up artist"
-            undragable={true}
-            cssextend={`
-            @media screen and (max-width: 767px) {
-              padding: 3px;
-              div {
-                position: unset !important;
-                height: 150px;
-              }
-            }
-            
-            @media screen and (max-width: 321px) {
-              padding: 2px;
-              div {
-                position: unset !important;
-                height: 140px;
-              }
-            }`}
-          />
-          <HeightImage
-            url={lineup[imageIndex + 1]}
-            height="260"
-            alt="Line up artist"
-            undragable={true}
-            cssextend={`
-            @media screen and (max-width: 767px) {
-              padding: 3px;
-              div {
-                position: unset !important;
-                height: 150px;
-              }
-            }
-            
-            @media screen and (max-width: 321px) {
-              padding: 2px;
-              div {
-                position: unset !important;
-                height: 140px;
-              }
-            }`}
-          />
-          <HeightImage
-            url={lineup[!isMobile ? imageIndex + 2 : imageIndex + 3]}
-            height="260"
-            alt="Line up artist"
-            undragable={true}
-            cssextend={`
-            @media screen and (max-width: 767px) {
-              padding: 3px;
-              div {
-                position: unset !important;
-                height: 150px;
-              }
-            }
-            
-            @media screen and (max-width: 321px) {
-              padding: 2px;
-              div {
-                position: unset !important;
-                height: 140px;
-              }
-            }`}
-          />
-          <HeightImage
-            url={lineup[!isMobile ? imageIndex + 3 : imageIndex + 2]}
-            height="260"
-            alt="Line up artist"
-            undragable={true}
-            cssextend={`
-            @media screen and (max-width: 767px) {
-              padding: 3px;
-              div {
-                position: unset !important;
-                height: 150px;
-              }
-            }
-            
-            @media screen and (max-width: 321px) {
-              padding: 2px;
-              div {
-                position: unset !important;
-                height: 140px;
-              }
-            }`}
-          />
+          <CarouselImage link={lineup[imageIndex]} />
+          <CarouselImage link={lineup[imageIndex + 1]} />
+          <CarouselImage link={lineup[!isMobile ? imageIndex + 2 : imageIndex + 3]} />
+          <CarouselImage link={lineup[!isMobile ? imageIndex + 3 : imageIndex + 2]} />
         </motion.div>
       </AnimatePresence>
       <div

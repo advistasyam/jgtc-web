@@ -1,6 +1,6 @@
 import "twin.macro"
 import React from "react"
-import { Example } from "@components/Carousel/Carousel"
+import { Carousel } from "@components/Carousel/Carousel"
 import { Lineup } from "@components/Landing/lineup"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
@@ -51,7 +51,7 @@ const PastLineUp: React.FC = () => {
         Reminiscing musicians from previous Jazz Goes to Campus Festivals
       </motion.h2>
 
-      <Example lineup={Lineup} />
+      <Carousel lineup={Lineup} />
     </div>
   )
 }

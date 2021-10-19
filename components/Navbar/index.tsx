@@ -83,7 +83,7 @@ const Navbar: React.FC = () => {
         initial={false}
         variants={menuVariants}
         animate={isOpen ? "opened" : "closed"}
-        tw="rounded-b-3xl"
+        tw="rounded-b-3xl shadow-2xl"
       >
         <div
           css={css`
@@ -97,15 +97,15 @@ const Navbar: React.FC = () => {
           </Link>
           <div tw="bg-white w-full opacity-50" css={css`height: 0.7px;`} />
           <Link href="/" passHref>
-            <p tw="text-white text-left py-2 pl-2 font-condensedmedium">PROGRAM</p>
+            <p tw="text-white text-left py-2 pl-2 font-condensedmedium">COMING SOON</p>
           </Link>
           <div tw="bg-white w-full opacity-50" css={css`height: 0.7px;`} />
           <Link href="/" passHref>
-            <p tw="text-white text-left py-2 pl-2 font-condensedmedium">PARTNERS</p>
+            <p tw="text-white text-left py-2 pl-2 font-condensedmedium">COMING SOON</p>
           </Link>
           <div tw="bg-white w-full opacity-50" css={css`height: 0.7px;`} />
           <Link href="/" passHref>
-            <p tw="text-white text-left py-2 pl-2 font-condensedmedium">ABOUT</p>
+            <p tw="text-white text-left py-2 pl-2 font-condensedmedium">COMING SOON</p>
           </Link>
           <div tw="bg-white w-full" css={css`height: 1px;`} />
         </div>

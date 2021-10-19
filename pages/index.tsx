@@ -7,7 +7,6 @@ import { PastLineUp } from "@components/Landing/PastLineUp"
 import { Kitabisa } from "@components/Landing/Kitabisa"
 
 export default function Home() {
-
   return (
     <>
       <Head>
@@ -20,7 +19,7 @@ export default function Home() {
       </Head>
 
       <Navbar />
-      
+
       <VideoLanding />
 
       <Kitabisa />
@@ -31,17 +30,3 @@ export default function Home() {
     </>
   )
 }
-
-// export async function getStaticProps() {
-//   const lineup = (
-//     await fg(["public/images/Landing/pastlineup/*"], {
-//       onlyFiles: true,
-//     })
-//   ).map(val => val.replace("public/", "/"))
-
-//   return {
-//     props: {
-//       lineup,
-//     },
-//   }
-// }
