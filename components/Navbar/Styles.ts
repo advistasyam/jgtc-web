@@ -19,6 +19,15 @@ export const Nav = styled(motion.nav)`
   z-index: 10;
 `
 
+export const MenuPrograms = styled(motion.div)`
+  background-color: #070707;
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  top: 50px;
+  z-index: 5;
+`
+
 export const Link = styled(motion.li)`
   color: white;
   margin-bottom: 1.6rem;
