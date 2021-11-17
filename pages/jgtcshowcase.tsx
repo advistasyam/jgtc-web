@@ -1,3 +1,4 @@
+import "twin.macro"
 import Head from "next/head"
 import { Navbar } from "@components/Navbar"
 import { Footer } from "@components/Footer"
@@ -15,7 +16,9 @@ export default function showcase() {
 
       <Navbar />
 
-      <ShowcaseHeader />
+      <div tw="overflow-x-hidden">
+        <ShowcaseHeader />
+      </div>
 
       <CardSection />
 

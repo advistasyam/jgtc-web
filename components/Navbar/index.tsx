@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import Link from "next/link"
-import { css } from "twin.macro"
+import tw, { css } from "twin.macro"
 import { SocialMedia } from "./SocialMedia"
 import WidthImage from "@components/WidthImage/WidthImage"
 import { Nav, HamburgerStyle, MenuPrograms } from "./Styles"
@@ -82,7 +82,7 @@ const Navbar: React.FC = () => {
               variants={programsMenuVariants}
               animate={isOpenPrograms ? "opened" : "closed"}
             >
-              <div tw="p-5">
+              <div tw="p-5 transform translate-y-[-500px]" css={isOpenPrograms && tw`translate-y-0`}>
                 <div
                   tw="bg-white w-full"
                   css={css`
