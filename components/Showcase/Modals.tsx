@@ -134,6 +134,7 @@ const Modals: React.FC<ModalsProps> = ({
                     href={ShowcaseData[indexModal].twitter}
                     target="_blank"
                     rel="noreferrer"
+                    style={{outline: "none"}}
                   >
                     <img
                       src="/images/Showcase/icon/twt.png"
@@ -146,6 +147,7 @@ const Modals: React.FC<ModalsProps> = ({
                     href={ShowcaseData[indexModal].ig}
                     target="_blank"
                     rel="noreferrer"
+                    style={{outline: "none"}}
                   >
                     <img
                       src="/images/Showcase/icon/ig.png"
@@ -158,6 +160,7 @@ const Modals: React.FC<ModalsProps> = ({
                     href={ShowcaseData[indexModal].youtube}
                     target="_blank"
                     rel="noreferrer"
+                    style={{outline: "none"}}
                   >
                     <img
                       src="/images/Showcase/icon/youtube.png"
