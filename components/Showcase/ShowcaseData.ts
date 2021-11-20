@@ -32,7 +32,7 @@ export const ShowcaseData = [
   {
     name: "Andre Dintuh x Wanda Omar - Rindu & Menemukanmu | JGTC Showcase",
     ig: "https://www.instagram.com/andredinuth/",
-    twitter: "https://twitter.com/wandaomar21",
+    twitter: "https://twitter.com/andredinuth",
     youtube: "https://www.youtube.com/user/bluesyheadroom",
     video: "https://youtu.be/1ORAhmiwdJE",
     airtime: "September 8, 2021",
@@ -117,7 +117,7 @@ export const ShowcaseData = [
     name: "Superstition, How Deep Is Your Love & Cinta Bersemi - Abraham Kevin x Jazzversity | BNI presents JGTC Showcase",
     ig: "https://www.instagram.com/abraham.kevin_/",
     twitter: "https://twitter.com/abrahamkevin_",
-    youtube: "https://www.youtube.com/channel/UCEwxkYsBDRS2iw84r99klnA",
+    youtube: "https://www.youtube.com/channel/UCpupT5SqeA4T6V6oQmTVxAA",
     video: "https://youtu.be/Vp25A0t2Uu4",
     airtime: "October 28, 2021",
     url: "/images/Showcase/card/kevin.jpg",

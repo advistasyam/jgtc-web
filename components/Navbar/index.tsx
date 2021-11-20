@@ -33,25 +33,27 @@ const Navbar: React.FC = () => {
       >
         <div tw="flex flex-row items-center space-x-6 lg:space-x-20">
           <Link href="/" passHref>
-            <WidthImage
-              url="/images/Navbar/NavSvg.svg"
-              alt="Navbar Logo"
-              width="80"
-              cssextend={`
-              div {
-                position: unset !important;
-                width: 80px;
-              }
-
-              @media screen and (max-width: 767px) {
+            <div tw="cursor-pointer">
+              <WidthImage
+                url="/images/Navbar/NavSvg.svg"
+                alt="Navbar Logo"
+                width="80"
+                cssextend={`
                 div {
                   position: unset !important;
-                  width: 50px;
+                  width: 80px;
                 }
-              }
-              `}
-              tw="cursor-pointer"
-            />
+
+                @media screen and (max-width: 767px) {
+                  div {
+                    position: unset !important;
+                    width: 50px;
+                  }
+                }
+                `}
+                tw="cursor-pointer"
+              />
+            </div>
           </Link>
           <div tw="hidden md:block">
             <Link href="/" passHref>
