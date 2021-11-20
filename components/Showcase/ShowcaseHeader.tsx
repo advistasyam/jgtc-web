@@ -7,12 +7,21 @@ const ShowcaseHeader: React.FC = () => {
       <div
         css={css`
           margin-top: 80px;
+
+          @media screen and (max-width: 767px) {
+            margin-top: 50px;
+          }
         `}
       />
       <img
         src="/images/Showcase/header.png"
         alt=""
-        style={{ width: "100vw" }}
+        tw="w-screen hidden md:block"
+      />
+      <img
+        src="/images/Showcase/headerMobile.png"
+        alt=""
+        tw="w-screen block md:hidden"
       />
     </>
   )

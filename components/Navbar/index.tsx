@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
                     height: 1px;
                   `}
                 />
-                <Link href="/jgtcshowcase" passHref>
+                <Link href="/showcase" passHref>
                   <p tw="text-white text-left py-2 pl-2 font-condensedmedium">
                     JGTC Showcase
                   </p>
@@ -181,7 +181,7 @@ const Navbar: React.FC = () => {
               height: 0.7px;
             `}
           />
-          <Link href="/jgtcshowcase" passHref>
+          <Link href="/showcase" passHref>
             <p tw="text-white text-left py-2 pl-2 font-condensedmedium">
               JGTC Showcase
             </p>

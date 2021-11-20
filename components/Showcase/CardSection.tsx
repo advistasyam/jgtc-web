@@ -1,10 +1,16 @@
-import { css } from "twin.macro"
-import React, { Fragment, useState } from "react"
+import "twin.macro"
+import React, { useState } from "react"
 import WidthImage from "@components/WidthImage/WidthImage"
 import { Modals } from "./Modals"
+import { ShowcaseData } from "./ShowcaseData"
+import { ImageDecoration } from "./ImageDecoration"
+import { motion } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 
 const CardSection: React.FC = () => {
-    let [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
+
+  const [indexModal, setIndexModal] = useState(0)
 
   function closeModal() {
     setIsOpen(false)
@@ -14,297 +20,92 @@ const CardSection: React.FC = () => {
     setIsOpen(true)
   }
 
+  const wrapperVariants = {
+    initial: {
+      clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
+      x: 100,
+    },
+    animate: {
+      clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+      x: 0,
+    },
+    initialBawah: {
+      clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
+      x: -100,
+    },
+    animateBawah: {
+      clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+      x: 0,
+    },
+  }
+
+  const [ref, inView, entry] = useInView({
+    /* Optional options */
+    threshold: 0.1,
+    triggerOnce: true,
+  })
+
   return (
     <>
       <div tw="relative overflow-hidden">
-        <div tw="mt-24" />
-        <h1 tw="font-drukwide text-orangejeruk font-bold text-xl sm:text-2xl md:text-5xl xl:text-6xl text-center">
+        <div tw="mt-10 md:mt-24" ref={ref} />
+        <motion.h1
+          tw="font-drukwide text-orangejeruk font-bold text-xl sm:text-2xl md:text-5xl xl:text-6xl text-center"
+          initial={"initial"}
+          animate={inView ? "animate" : "initial"}
+          variants={wrapperVariants}
+          transition={{ duration: 2, ease: "easeOut" }}
+        >
           JGTC SHOWCASE
-        </h1>
+        </motion.h1>
         <div tw="mt-6 md:mt-12" />
         <div tw="container mx-auto">
           <div tw="flex flex-row flex-wrap justify-center w-full">
-            <div tw="mx-8 my-3 md:my-8 border-4 md:border-8 border-orangejeruk rounded-md" onClick={openModal}>
-              <WidthImage
-                url="/images/Showcase/card/tompi.png"
-                alt="Tompi"
-                width="500"
-                cssextend={`
-                    div {
-                        @media screen and (max-width: 1280px) {
-                            width: 350px;
+            {ShowcaseData.map((val, index) => {
+              return (
+                <div
+                  key={index}
+                  tw="mx-8 my-3 md:my-8 cursor-pointer transition duration-200 ease-in-out 
+                  hover:-translate-y-4"
+                  onClick={() => {
+                    openModal()
+                    setIndexModal(index)
+                  }}
+                >
+                  <WidthImage
+                    url={val.url}
+                    alt={val.alt}
+                    width="500"
+                    cssextend={`
+                        div {
+                          border-width: 8px;
+                          border-color: #c05328;
+                          border-radius: 0.375rem;
+                          @media screen and (max-width: 1279px) {
+                              width: 350px;
+                          }
+                          @media screen and (max-width: 767px) {
+                              width: 100%;
+                              border-width: 4px;
+                          }
                         }
-                        @media screen and (max-width: 768px) {
-                            width: 100%;
-                        }
-                    }
-                `}
-              />
-            </div>
-            <div tw="mx-8 my-3 md:my-8 border-4 md:border-8 border-orangejeruk rounded-md">
-              <WidthImage
-                url="/images/Showcase/card/ecoutez.jpg"
-                alt="Ecoutez"
-                width="500"
-                cssextend={`
-                    div {
-                        @media screen and (max-width: 1280px) {
-                            width: 350px;
-                        }
-                        @media screen and (max-width: 768px) {
-                            width: 100%;
-                        }
-                    }
-                `}
-              />
-            </div>
-            <div tw="mx-8 my-3 md:my-8 border-4 md:border-8 border-orangejeruk rounded-md">
-              <WidthImage
-                url="/images/Showcase/card/andre.jpg"
-                alt="Andre"
-                width="500"
-                cssextend={`
-                    div {
-                        @media screen and (max-width: 1280px) {
-                            width: 350px;
-                        }
-                        @media screen and (max-width: 768px) {
-                            width: 100%;
-                        }
-                    }
-                `}
-              />
-            </div>
-            <div tw="mx-8 my-3 md:my-8 border-4 md:border-8 border-orangejeruk rounded-md">
-              <WidthImage
-                url="/images/Showcase/card/andien.png"
-                alt="Andien"
-                width="500"
-                cssextend={`
-                    div {
-                        @media screen and (max-width: 1280px) {
-                            width: 350px;
-                        }
-                        @media screen and (max-width: 768px) {
-                            width: 100%;
-                        }
-                    }
-                `}
-              />
-            </div>
-            <div tw="mx-8 my-3 md:my-8 border-4 md:border-8 border-orangejeruk rounded-md">
-              <WidthImage
-                url="/images/Showcase/card/kamga.png"
-                alt="Kamga"
-                width="500"
-                cssextend={`
-                    div {
-                        @media screen and (max-width: 1280px) {
-                            width: 350px;
-                        }
-                        @media screen and (max-width: 768px) {
-                            width: 100%;
-                        }
-                    }
-                `}
-              />
-            </div>
-            <div tw="mx-8 my-3 md:my-8 border-4 md:border-8 border-orangejeruk rounded-md">
-              <WidthImage
-                url="/images/Showcase/card/ify.jpg"
-                alt="Ify"
-                width="500"
-                cssextend={`
-                    div {
-                        @media screen and (max-width: 1280px) {
-                            width: 350px;
-                        }
-                        @media screen and (max-width: 768px) {
-                            width: 100%;
-                        }
-                    }
-                `}
-              />
-            </div>
-            <div tw="mx-8 my-3 md:my-8 border-4 md:border-8 border-orangejeruk rounded-md">
-              <WidthImage
-                url="/images/Showcase/card/isyana.jpg"
-                alt="Isyana"
-                width="500"
-                cssextend={`
-                    div {
-                        @media screen and (max-width: 1280px) {
-                            width: 350px;
-                        }
-                        @media screen and (max-width: 768px) {
-                            width: 100%;
-                        }
-                    }
-                `}
-              />
-            </div>
-            <div tw="mx-8 my-3 md:my-8 border-4 md:border-8 border-orangejeruk rounded-md">
-              <WidthImage
-                url="/images/Showcase/card/tohpati.jpg"
-                alt="Tohpati"
-                width="500"
-                cssextend={`
-                    div {
-                        @media screen and (max-width: 1280px) {
-                            width: 350px;
-                        }
-                        @media screen and (max-width: 768px) {
-                            width: 100%;
-                        }
-                    }
-                `}
-              />
-            </div>
-            <div tw="mx-8 my-3 md:my-8 border-4 md:border-8 border-orangejeruk rounded-md">
-              <WidthImage
-                url="/images/Showcase/card/kevin.jpg"
-                alt="Kevin"
-                width="500"
-                cssextend={`
-                    div {
-                        @media screen and (max-width: 1280px) {
-                            width: 350px;
-                        }
-                        @media screen and (max-width: 768px) {
-                            width: 100%;
-                        }
-                    }
-                `}
-              />
-            </div>
+                    `}
+                  />
+                </div>
+              )
+            })}
           </div>
         </div>
 
         {/* Absolute Desktop Section */}
-        <img
-          src="/images/Showcase/splitbiola.png"
-          alt=""
-          tw="absolute"
-          css={css`
-            top: 5%;
-            left: 0;
-            width: 350px;
-            z-index: -1;
-
-            @media screen and (max-width: 1280px) {
-              width: 350px;
-              left: -10%;
-            }
-
-            @media screen and (max-width: 768px) {
-              width: 300px;
-              left: -35%;
-            }
-          `}
-        />
-        <img
-          src="/images/Showcase/splitpiano.png"
-          alt=""
-          tw="absolute"
-          css={css`
-            top: 21%;
-            right: 3%;
-            width: 200px;
-            z-index: -1;
-
-            @media screen and (max-width: 768px) {
-              top: 30%;
-              width: 150px;
-              right: -10%;
-            }
-          `}
-        />
-        <img
-          src="/images/Landing/sponsorpage/piano.png"
-          alt=""
-          tw="absolute"
-          css={css`
-            top: 35%;
-            left: -10%;
-            width: 500px;
-            transform: rotate(-105deg);
-            z-index: -1;
-
-            @media screen and (max-width: 1536px) {
-              width: 350px;
-              left: -12%;
-            }
-
-            @media screen and (max-width: 1536px) {
-              left: -30%;
-              top: 50%;
-              width: 240px;
-            }
-          `}
-        />
-        <img
-          src="/images/Showcase/trumpetgreenyellow.png"
-          alt=""
-          tw="absolute"
-          css={css`
-            top: 55%;
-            right: -10%;
-            width: 500px;
-            z-index: -1;
-
-            @media screen and (max-width: 1280px) {
-              width: 350px;
-            }
-
-            @media screen and (max-width: 768px) {
-              top: 64%;
-              right: -35%;
-              transform: rotate(20deg);
-            }
-          `}
-        />
-        <img
-          src="/images/Landing/sponsorpage/trompet.png"
-          alt=""
-          tw="absolute"
-          css={css`
-            bottom: -5%;
-            left: -3%;
-            width: 500px;
-            transform: rotate(-20deg);
-            z-index: -1;
-
-            @media screen and (max-width: 768px) {
-              width: 250px;
-              bottom: 10%;
-              left: -25%;
-            }
-          `}
-        />
-        <img
-          src="/images/Showcase/trumpetgreen.png"
-          alt=""
-          tw="absolute"
-          css={css`
-            bottom: 0%;
-            right: 7%;
-            width: 350px;
-            z-index: -1;
-
-            @media screen and (max-width: 768px) {
-              width: 200px;
-              bottom: 2%;
-              right: -20%;
-              transform: rotate(90deg);
-            }
-          `}
-        />
+        <ImageDecoration />
       </div>
 
-      <Modals 
+      <Modals
         isOpen={isOpen}
         openModal={openModal}
         closeModal={closeModal}
+        indexModal={indexModal}
       />
     </>
   )
