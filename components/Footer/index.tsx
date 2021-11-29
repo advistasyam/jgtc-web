@@ -3,10 +3,14 @@ import React from "react"
 import HeightImage from "../HeightImage/HeightImage"
 import WidthImage from "../WidthImage/WidthImage"
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  addons?: boolean
+}
+
+const Footer: React.FC<FooterProps> = ({addons = false}) => {
   return (
     <div
-      tw="bg-mainblack overflow-x-hidden"
+      tw="bg-mainblack overflow-x-hidden relative"
       css={css`
         margin-top: 200px;
 
@@ -121,6 +125,13 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
+      {addons && (
+        <img 
+          alt=""
+          src="/images/Jots/footer-addons.png"
+          tw="absolute bottom-0 right-0 w-[418px] hidden lg:block"
+        />
+      )}
     </div>
   )
 }

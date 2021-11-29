@@ -5,7 +5,7 @@ import { Footer } from "@components/Footer"
 import { CardSection } from "@components/Showcase/CardSection"
 import { ShowcaseHeader } from "@components/Showcase/ShowcaseHeader"
 
-export default function showcase() {
+export default function Showcase() {
   return (
     <>
       <Head>

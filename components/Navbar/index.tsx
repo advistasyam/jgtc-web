@@ -102,9 +102,9 @@ const Navbar: React.FC = () => {
                     height: 0.7px;
                   `}
                 />
-                <Link href="/" passHref>
+                <Link href="/jots" passHref>
                   <p tw="text-white text-left py-2 pl-2 font-condensedmedium">
-                    COMING SOON
+                    Jazz On The Sofa
                   </p>
                 </Link>
                 <div
@@ -113,9 +113,9 @@ const Navbar: React.FC = () => {
                     height: 0.7px;
                   `}
                 />
-                <Link href="/" passHref>
+                <Link href="/intimatesession" passHref>
                   <p tw="text-white text-left py-2 pl-2 font-condensedmedium">
-                    COMING SOON
+                    Intimate Session
                   </p>
                 </Link>
                 <div
@@ -194,9 +194,9 @@ const Navbar: React.FC = () => {
               height: 0.7px;
             `}
           />
-          <Link href="/" passHref>
+          <Link href="/jots" passHref>
             <p tw="text-white text-left py-2 pl-2 font-condensedmedium">
-              COMING SOON
+              Jazz On The Sofa
             </p>
           </Link>
           <div
@@ -205,9 +205,9 @@ const Navbar: React.FC = () => {
               height: 0.7px;
             `}
           />
-          <Link href="/" passHref>
+          <Link href="/intimatesession" passHref>
             <p tw="text-white text-left py-2 pl-2 font-condensedmedium">
-              COMING SOON
+              Intimate Session
             </p>
           </Link>
           <div

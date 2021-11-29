@@ -217,7 +217,7 @@ const Kitabisa: React.FC = () => {
           </div>
           <motion.img
             src="/images/Landing/sponsorpage/Iluni.png"
-            alt="iluni"
+            alt=""
             css={css`
               height: 120px;
             `}
@@ -231,7 +231,7 @@ const Kitabisa: React.FC = () => {
 
         <motion.img
           src="/images/Landing/sponsorpage/3photo.png"
-          alt="3photo"
+          alt=""
           css={css`
             width: 120px;
           `}
