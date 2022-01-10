@@ -4,7 +4,7 @@ import { Navbar } from "@components/Navbar"
 import { Footer } from "@components/Footer"
 import { VideoLanding } from "@components/Landing/VideoLanding"
 import { PastLineUp } from "@components/Landing/PastLineUp"
-import { Kitabisa } from "@components/Landing/Kitabisa"
+import { SponsorSection } from "@components/Landing/SponsorSection"
 
 export default function Home() {
   return (
@@ -22,7 +22,10 @@ export default function Home() {
 
       <VideoLanding />
 
-      <Kitabisa />
+      {/* Kitabisa is outdated in 1/10/2022, changed with sponsor page */}
+      {/* <Kitabisa /> */}
+
+      <SponsorSection />
 
       <PastLineUp />
 
