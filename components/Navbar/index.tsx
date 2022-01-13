@@ -8,12 +8,18 @@ import { motion } from "framer-motion"
 import {
   menuVariants,
   programsArrowButton,
-  programsMenuVariants
+  programsMenuVariants,
 } from "@components/Navbar/FramerUtilities"
+import { useRouter } from "next/router"
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isOpenPrograms, setIsOpenPrograms] = useState(false)
+  const { pathname } = useRouter()
+
+  if (pathname.includes("museum")) {
+    return <></>
+  }
 
   return (
     <>
@@ -78,13 +84,16 @@ const Navbar: React.FC = () => {
               />
             </div>
 
-            <MenuPrograms 
+            <MenuPrograms
               tw="rounded-b-xl"
               initial={false}
               variants={programsMenuVariants}
               animate={isOpenPrograms ? "opened" : "closed"}
             >
-              <div tw="p-5 transform translate-y-[-500px]" css={isOpenPrograms && tw`translate-y-0`}>
+              <div
+                tw="p-5 transform translate-y-[-500px]"
+                css={isOpenPrograms && tw`translate-y-0`}
+              >
                 <div
                   tw="bg-white w-full"
                   css={css`
@@ -133,6 +142,11 @@ const Navbar: React.FC = () => {
               </div>
             </MenuPrograms>
           </div>
+          <div tw="hidden md:block">
+            <Link href="/museum" passHref>
+              <p tw="text-white cursor-pointer">MUSEUM</p>
+            </Link>
+          </div>
         </div>
 
         <SocialMedia />
@@ -167,6 +181,9 @@ const Navbar: React.FC = () => {
             padding-top: 60px;
           `}
           tw="pl-5 pr-7"
+          onClick={() => {
+            setIsOpen(!isOpen)
+          }}
         >
           <div
             tw="bg-white w-full"
@@ -208,6 +225,17 @@ const Navbar: React.FC = () => {
           <Link href="/intimatesession" passHref>
             <p tw="text-white text-left py-2 pl-2 font-condensedmedium">
               Intimate Session
+            </p>
+          </Link>
+          <div
+            tw="bg-white w-full opacity-50"
+            css={css`
+              height: 0.7px;
+            `}
+          />
+          <Link href="/museum" passHref>
+            <p tw="text-white text-left py-2 pl-2 font-condensedmedium">
+              Museum
             </p>
           </Link>
           <div

@@ -23,13 +23,13 @@ const SponsorSection: React.FC = () => {
   })
 
   return (
-    <div tw="relative mt-[50px] md:mt-section">
+    <div tw="relative mt-[50px] md:pt-section overflow-x-hidden">
       <img
         src="/images/Landing/sponsorpage/sponsor_img.png"
         alt=""
         tw="absolute left-0 w-[90px] md:w-[300px] z-10"
         css={css`
-          top: -150px;
+          top: -70px;
 
           @media screen and (max-width: 767px) {
             top: -20px;
@@ -41,7 +41,7 @@ const SponsorSection: React.FC = () => {
         alt=""
         tw="absolute right-0 w-[90px] md:w-[300px] z-10"
         css={css`
-          top: -150px;
+          top: -70px;
 
           @media screen and (max-width: 767px) {
             top: -20px;

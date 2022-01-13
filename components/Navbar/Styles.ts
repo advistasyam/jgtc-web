@@ -12,7 +12,7 @@ export const Header = styled.header`
 
 export const Nav = styled(motion.nav)`
   background-color: #070707;
-  height: 255px;
+  height: 290px;
   width: 100vw;
   position: fixed;
   top: 0;

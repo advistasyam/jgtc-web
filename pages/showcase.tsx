@@ -14,7 +14,7 @@ export default function Showcase() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar />
+      {/* <Navbar /> */}
 
       <div tw="overflow-x-hidden">
         <ShowcaseHeader />
