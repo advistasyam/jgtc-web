@@ -4,6 +4,7 @@ import { wrap } from "popmotion"
 import { images } from "@components/Museum/image-data"
 import { css, styled } from "twin.macro"
 import Image from "next/image"
+import { Decoration } from "@components/Museum/Decoration"
 
 const variants = {
   enter: (direction: number) => {
@@ -77,12 +78,10 @@ export default function Gambar() {
   const imageIndex = wrap(0, images.length, page)
 
   const paginate = (newDirection: number) => {
-    if (page + newDirection >= 0) {
+    if (page + newDirection >= 0 && page + newDirection < images.length) {
       setPage([page + newDirection, newDirection])
     }
   }
-
-  console.log(page)
 
   return (
     <NextButton tw="relative">
@@ -127,13 +126,15 @@ export default function Gambar() {
           />
         </motion.div>
       </AnimatePresence>
-      <div
-        onClick={() => paginate(1)}
-        className="nextButton"
-        tw="text-white"
-      >
-        &gt;
-      </div>
+      {page < images.length - 1 && (
+        <div
+          onClick={() => paginate(1)}
+          className="nextButton"
+          tw="text-white"
+        >
+          &gt;
+        </div>
+      )}
       {page > 0 && (
         <div
           onClick={() => paginate(-1)}
@@ -143,6 +144,7 @@ export default function Gambar() {
           &gt;
         </div>
       )}
+      <Decoration page={page} />
     </NextButton>
   )
 }
