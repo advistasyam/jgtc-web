@@ -77,8 +77,12 @@ export default function Gambar() {
   const imageIndex = wrap(0, images.length, page)
 
   const paginate = (newDirection: number) => {
-    setPage([page + newDirection, newDirection])
+    if (page + newDirection >= 0) {
+      setPage([page + newDirection, newDirection])
+    }
   }
+
+  console.log(page)
 
   return (
     <NextButton tw="relative">
@@ -130,13 +134,15 @@ export default function Gambar() {
       >
         &gt;
       </div>
-      <div
-        onClick={() => paginate(-1)}
-        className="prevButton"
-        tw="text-white"
-      >
-        &gt;
-      </div>
+      {page > 0 && (
+        <div
+          onClick={() => paginate(-1)}
+          className="prevButton"
+          tw="text-white"
+        >
+          &gt;
+        </div>
+      )}
     </NextButton>
   )
 }

@@ -18,7 +18,7 @@ export default function Museum() {
         />
       </div>
 
-    <Link href={`/museum/${parseInt(pid)-1}`} passHref>
+    <Link href="" passHref>
       <div
         tw="text-white absolute left-5 md:left-0 xl:left-10 text-4xl cursor-pointer hidden sm:block"
         css={css`
@@ -31,7 +31,7 @@ export default function Museum() {
       </div>
     </Link>
 
-    <Link href={`/museum/${parseInt(pid)+1}`} passHref>
+    <Link href="" passHref>
       <div
         tw="text-white absolute right-5 md:right-0 xl:right-10 text-4xl cursor-pointer hidden sm:block"
         css={css`
