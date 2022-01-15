@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
   const [isOpenPrograms, setIsOpenPrograms] = useState(false)
   const { pathname } = useRouter()
 
-  if (pathname.includes("museum")) {
+  if (pathname.includes("museum") || pathname.includes("gambar")) {
     return <></>
   }
 

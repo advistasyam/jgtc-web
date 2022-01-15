@@ -12,7 +12,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     enter: { opacity: 1, x: 0, y: 0 },
     exit: { opacity: 0, x: 0, y: -100 },
   }
-  const { pathname } = useRouter()
+
+  const {asPath} = useRouter()
+
   return (
     <>
       <Script
@@ -30,14 +32,14 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Script>
       <GlobalStyles />
       <Navbar/>
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence exitBeforeEnter={true}>
         <motion.main
           variants={variants} // Pass the variant object into Framer Motion
           initial="hidden" // Set the initial state to variants.hidden
           animate="enter" // Animated state to variants.enter
           exit="exit" // Exit state (used later) to variants.exit
           transition={{ type: "linear" }} // Set the transition to linear
-          key={pathname}
+          key={asPath}
           tw="overflow-x-hidden"
         >
           <Component {...pageProps} />
