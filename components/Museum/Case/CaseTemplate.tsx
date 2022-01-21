@@ -26,11 +26,11 @@ const CaseT: React.FC = () => {
             duration: 0.5,
             delay: 0.5,
           }}
-          src="/images/Museum/1/left_up.png"
+          src="/images/Museum/CaseT/up.png"
           alt=""
           css={css`
             width: calc(100vw - 100vh);
-            max-width: 35%;
+            max-width: 30%;
           `}
         />
       </div>

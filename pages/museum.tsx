@@ -5,6 +5,8 @@ import { images } from "@components/Museum/image-data"
 import { css, styled } from "twin.macro"
 import Image from "next/image"
 import { Decoration } from "@components/Museum/Decoration"
+import { useMediaQuery } from "react-responsive"
+import Link from "next/link"
 
 const variants = {
   enter: (direction: number) => {
@@ -55,6 +57,15 @@ const NextButton = styled.div`
     left: 10px;
     transform: scale(-1);
   }
+
+  @media screen and (max-width: 1000px) {
+    .nextButton,
+    .prevButton {
+      width: 20px;
+      height: 20px;
+      font-size: 9px;
+    }
+  }
 `
 
 /**
@@ -83,68 +94,90 @@ export default function Gambar() {
     }
   }
 
-  return (
-    <NextButton tw="relative">
-      <AnimatePresence initial={false} custom={direction} exitBeforeEnter>
-        <motion.div
-          key={page}
-          // src={images[imageIndex]}
-          custom={direction}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{
-            x: { type: "spring", stiffness: 300, damping: 30 },
-            opacity: { duration: 0.15 },
-          }}
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={1}
-          onDragEnd={(e, { offset, velocity }) => {
-            const swipe = swipePower(offset.x, velocity.x)
+  const isPhone = useMediaQuery({ query: "(max-width: 650px)" })
 
-            if (swipe < -swipeConfidenceThreshold) {
-              paginate(1)
-            } else if (swipe > swipeConfidenceThreshold) {
-              paginate(-1)
-            }
-          }}
-          tw="w-screen h-screen"
-          css={css`
-            img {
-              pointer-events: none;
-            }
-          `}
-        >
-          <Image
-            src={images[imageIndex]}
-            layout="fill"
-            alt=""
-            tw="object-cover"
-            quality={100}
-          />
-        </motion.div>
-      </AnimatePresence>
-      {page < images.length - 1 && (
-        <div
-          onClick={() => paginate(1)}
-          className="nextButton"
-          tw="text-white"
-        >
-          &gt;
+  return (
+    <>
+      {isPhone ? (
+        <div tw="w-screen h-screen flex flex-col items-center justify-center bg-white space-y-4">
+          <img src="/images/museum/rotate.png" alt="" />
+          <h1>Rotate Your Phone to See JGTC Museum</h1>
+          <h1>Open in PC for best experience</h1>
         </div>
+      ) : (
+        <NextButton tw="relative overflow-hidden">
+          <Link href="/" passHref>
+            <img src="/images/Museum/home.png" alt="" tw="absolute top-[50px] left-[50px] w-[50px] z-40 cursor-pointer" />
+          </Link>
+          <AnimatePresence initial={false} custom={direction} exitBeforeEnter>
+            <motion.div
+              key={page}
+              // src={images[imageIndex]}
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                x: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.15 },
+              }}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={1}
+              onDragEnd={(e, { offset, velocity }) => {
+                const swipe = swipePower(offset.x, velocity.x)
+
+                if (swipe < -swipeConfidenceThreshold) {
+                  paginate(1)
+                } else if (swipe > swipeConfidenceThreshold) {
+                  paginate(-1)
+                }
+              }}
+              tw="w-screen h-screen"
+              css={css`
+                img {
+                  pointer-events: none;
+                }
+              `}
+            >
+              <Image
+                src={images[imageIndex]}
+                layout="fill"
+                alt=""
+                css={css`
+                  object-fit: fill;
+
+                  @media screen and (max-width: 1000px) {
+                    object-fit: contain;
+                  }
+                `}
+                // tw="object-fill"
+                quality={100}
+              />
+            </motion.div>
+          </AnimatePresence>
+          {page < images.length - 1 && (
+            <div
+              onClick={() => paginate(1)}
+              className="nextButton"
+              tw="text-white"
+            >
+              &gt;
+            </div>
+          )}
+          {page > 0 && (
+            <div
+              onClick={() => paginate(-1)}
+              className="prevButton"
+              tw="text-white"
+            >
+              &gt;
+            </div>
+          )}
+          <Decoration page={page} />
+        </NextButton>
       )}
-      {page > 0 && (
-        <div
-          onClick={() => paginate(-1)}
-          className="prevButton"
-          tw="text-white"
-        >
-          &gt;
-        </div>
-      )}
-      <Decoration page={page} />
-    </NextButton>
+    </>
   )
 }
