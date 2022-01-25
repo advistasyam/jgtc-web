@@ -55,12 +55,12 @@ const Case4: React.FC = () => {
         />
       </div>
       <div
-        tw="absolute top-[5%] left-[23%] transition duration-200 ease-in-out 
+        tw="absolute top-[0%] left-[23%] transition duration-200 ease-in-out 
             hover:-translate-y-4"
       >
         <motion.img
           variants={variants}
-          initial="initial"
+          initial="initial" 
           animate="finish"
           transition={{
             duration: 0.5,
