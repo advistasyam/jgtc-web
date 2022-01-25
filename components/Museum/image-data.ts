@@ -24,4 +24,8 @@ export const images = [
   "/images/Museum/22.png",
   "/images/Museum/23.png",
   "/images/Museum/24.png",
+  "/images/Museum/25.png",
+  "/images/Museum/26.png",
+  "/images/Museum/27.png",
+  "/images/Museum/28.png",
 ]

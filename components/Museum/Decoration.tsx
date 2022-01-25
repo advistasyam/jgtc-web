@@ -48,7 +48,11 @@ const ListCase = [
   <></>,
   <Case22 key={22} />,
   <Case23 key={23} />,
-  <></>
+  <></>,
+  <></>,
+  <></>,
+  <></>,
+  <></>,
 ]
 
 const Decoration: React.FC<DecorationProps> = ({ page }) => {
