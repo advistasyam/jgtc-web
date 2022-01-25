@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { wrap } from "popmotion"
 import { images } from "@components/Museum/image-data"
@@ -7,6 +7,7 @@ import Image from "next/image"
 import { Decoration } from "@components/Museum/Decoration"
 import { useMediaQuery } from "react-responsive"
 import Link from "next/link"
+import { useRouter } from "next/router"
 
 const variants = {
   enter: (direction: number) => {
@@ -96,6 +97,20 @@ export default function Gambar() {
 
   const isPhone = useMediaQuery({ query: "(max-width: 650px)" })
 
+  const router = useRouter()
+
+  useEffect(() => {
+    if (router.query?.q == "birthofjazz") {
+      setPage([0,0])
+    } else if (router.query.q == "thejazzage") {
+      setPage([18,0])
+    } else if (router.query.q == "jazzdiaspora") {
+      setPage([4,0]) // change later
+    } else if (router.query.q == "jazzinindonesia") {
+      setPage([6,0])
+    }
+  }, [router.query])
+
   return (
     <>
       {isPhone ? (
@@ -106,7 +121,7 @@ export default function Gambar() {
         </div>
       ) : (
         <NextButton tw="relative overflow-hidden">
-          <Link href="/" passHref>
+          <Link href="/galleryhomepage" passHref>
             <img src="/images/Museum/home.png" alt="" tw="absolute top-[50px] left-[50px] w-[50px] z-40 cursor-pointer" />
           </Link>
           <AnimatePresence initial={false} custom={direction} exitBeforeEnter>

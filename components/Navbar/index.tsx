@@ -143,7 +143,7 @@ const Navbar: React.FC = () => {
             </MenuPrograms>
           </div>
           <div tw="hidden md:block">
-            <Link href="/museum" passHref>
+            <Link href="/galleryhomepage" passHref>
               <p tw="text-white cursor-pointer">MUSEUM</p>
             </Link>
           </div>
@@ -233,7 +233,7 @@ const Navbar: React.FC = () => {
               height: 0.7px;
             `}
           />
-          <Link href="/museum" passHref>
+          <Link href="/galleryhomepage" passHref>
             <p tw="text-white text-left py-2 pl-2 font-condensedmedium">
               Museum
             </p>

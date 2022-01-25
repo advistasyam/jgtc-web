@@ -17,4 +17,11 @@ export const images = [
   "/images/Museum/15.png",
   "/images/Museum/16.png",
   "/images/Museum/17.png",
+  "/images/Museum/18.png",
+  "/images/Museum/19.png",
+  "/images/Museum/20.png",
+  "/images/Museum/21.png",
+  "/images/Museum/22.png",
+  "/images/Museum/23.png",
+  "/images/Museum/24.png",
 ]
