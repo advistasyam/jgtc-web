@@ -107,7 +107,7 @@ export default function Gambar() {
     } else if (router.query.q == "jazzdiaspora") {
       setPage([25,0])
     } else if (router.query.q == "jazzinindonesia") {
-      setPage([0,0])
+      setPage([32,0])
     }
   }, [router.query])
 

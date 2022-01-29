@@ -147,7 +147,7 @@ const CardSection: React.FC = () => {
             <div
               tw="mx-8 my-3 md:my-8 cursor-pointer transition duration-200 ease-in-out 
                   hover:-translate-y-4"
-              // onClick={goToPage4}
+              onClick={goToPage4}
             >
               <WidthImage
                 url="/images/Museum/thumbnail4.png"

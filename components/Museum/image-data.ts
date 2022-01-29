@@ -28,4 +28,10 @@ export const images = [
   "/images/Museum/26.png",
   "/images/Museum/27.png",
   "/images/Museum/28.png",
+  "/images/Museum/29.png",
+  "/images/Museum/30.png",
+  "/images/Museum/31.png",
+  "/images/Museum/32.png",
+  "/images/Museum/33.png",
+  "/images/Museum/34.png"
 ]

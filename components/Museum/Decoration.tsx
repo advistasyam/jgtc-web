@@ -18,6 +18,9 @@ import { Case16 } from "./Case/Case16"
 import { Case17 } from "./Case/Case17"
 import { Case22 } from "./Case/Case22"
 import { Case23 } from "./Case/Case23"
+import { Case29 } from "./Case/Case29"
+import { Case31 } from "./Case/Case31"
+import { Case33 } from "./Case/Case33"
 
 interface DecorationProps {
   page: number
@@ -53,6 +56,12 @@ const ListCase = [
   <></>,
   <></>,
   <></>,
+  <Case29 key={29} />,
+  <></>,
+  <Case31 key={31} />,
+  <></>,
+  <Case33 key={33} />,
+  <></>
 ]
 
 const Decoration: React.FC<DecorationProps> = ({ page }) => {
