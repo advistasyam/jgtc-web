@@ -64,7 +64,7 @@ const Case33: React.FC = () => {
           animate="finish"
           transition={{
             duration: 0.5,
-            delay: 0.5,
+            delay: 1.5,
           }}
           src="/images/Museum/33/3.png"
           alt=""
@@ -84,7 +84,7 @@ const Case33: React.FC = () => {
           animate="finish"
           transition={{
             duration: 0.5,
-            delay: 1,
+            delay: 2,
           }}
           src="/images/Museum/33/4.png"
           alt=""
@@ -104,7 +104,7 @@ const Case33: React.FC = () => {
           animate="finish"
           transition={{
             duration: 0.5,
-            delay: 1,
+            delay: 2.5,
           }}
           src="/images/Museum/33/radio.png"
           alt=""
