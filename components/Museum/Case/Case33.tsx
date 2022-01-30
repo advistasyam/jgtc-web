@@ -94,9 +94,12 @@ const Case33: React.FC = () => {
           `}
         />
       </div>
-      <div
+      <a
         tw="absolute top-[70%] left-[75.5%] transition duration-200 ease-in-out 
-            hover:-translate-y-4"
+            hover:-translate-y-4 cursor-pointer"
+        href="https://open.spotify.com/playlist/7CfjtxgkaiIZQKP2atjKGj?si=c870c744463e44a3"
+        target="_blank"
+        rel="noreferrer"
       >
         <motion.img
           variants={variants}
@@ -113,7 +116,7 @@ const Case33: React.FC = () => {
             max-width: 22%;
           `}
         />
-      </div>
+      </a>
     </>
   )
 }
