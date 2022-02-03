@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
   const [isOpenPrograms, setIsOpenPrograms] = useState(false)
   const { pathname } = useRouter()
 
-  if (pathname.includes("museum") || pathname.includes("gambar")) {
+  if (pathname.includes("museumhall")) {
     return <></>
   }
 
@@ -143,7 +143,7 @@ const Navbar: React.FC = () => {
             </MenuPrograms>
           </div>
           <div tw="hidden md:block">
-            <Link href="/galleryhomepage" passHref>
+            <Link href="/museum" passHref>
               <p tw="text-white cursor-pointer">MUSEUM</p>
             </Link>
           </div>
@@ -233,7 +233,7 @@ const Navbar: React.FC = () => {
               height: 0.7px;
             `}
           />
-          <Link href="/galleryhomepage" passHref>
+          <Link href="/museum" passHref>
             <p tw="text-white text-left py-2 pl-2 font-condensedmedium">
               Museum
             </p>

@@ -17,6 +17,11 @@ const Case29: React.FC = () => {
       <div
         tw="absolute top-[20%] left-[14%] transition duration-200 ease-in-out 
             hover:translate-y-4"
+        css={css`
+          @media screen and (max-width: 1000px) and (min-width: 740px) {
+            top: 34%;
+          }
+        `}
       >
         <motion.img
           variants={variants}
@@ -37,6 +42,11 @@ const Case29: React.FC = () => {
       <div
         tw="absolute top-[10.5%] left-[22.5%] transition duration-200 ease-in-out 
             hover:translate-y-4"
+        css={css`
+          @media screen and (max-width: 1000px) and (min-width: 740px) {
+            top: 17%;
+          }
+        `}
       >
         <motion.img
           variants={variants}
@@ -57,6 +67,11 @@ const Case29: React.FC = () => {
       <div
         tw="absolute top-[4.5%] left-[31%] transition duration-200 ease-in-out 
             hover:translate-y-4"
+        css={css`
+          @media screen and (max-width: 1000px) and (min-width: 740px) {
+            top: 7.5%;
+          }
+        `}
       >
         <motion.img
           variants={variants}
@@ -77,6 +92,11 @@ const Case29: React.FC = () => {
       <div
         tw="absolute top-[1%] left-[39.5%] transition duration-200 ease-in-out 
             hover:translate-y-4"
+        css={css`
+          @media screen and (max-width: 1000px) and (min-width: 740px) {
+            top: 2%;
+          }
+        `}
       >
         <motion.img
           variants={variants}
@@ -117,6 +137,11 @@ const Case29: React.FC = () => {
       <div
         tw="absolute top-[0.5%] left-[56%] transition duration-200 ease-in-out 
             hover:translate-y-4"
+        css={css`
+          @media screen and (max-width: 1000px) and (min-width: 740px) {
+            top: 1%;
+          }
+        `}
       >
         <motion.img
           variants={variants}
@@ -137,6 +162,11 @@ const Case29: React.FC = () => {
       <div
         tw="absolute top-[3.3%] left-[64.5%] transition duration-200 ease-in-out 
             hover:translate-y-4"
+        css={css`
+          @media screen and (max-width: 1000px) and (min-width: 740px) {
+            top: 5.5%;
+          }
+        `}
       >
         <motion.img
           variants={variants}
@@ -157,6 +187,11 @@ const Case29: React.FC = () => {
       <div
         tw="absolute top-[8.7%] left-[73%] transition duration-200 ease-in-out 
             hover:translate-y-4"
+        css={css`
+          @media screen and (max-width: 1000px) and (min-width: 740px) {
+            top: 14%;
+          }
+        `}
       >
         <motion.img
           variants={variants}
@@ -177,6 +212,11 @@ const Case29: React.FC = () => {
       <div
         tw="absolute top-[17%] left-[81.4%] transition duration-200 ease-in-out 
             hover:translate-y-4"
+        css={css`
+          @media screen and (max-width: 1000px) and (min-width: 740px) {
+            top: 28.2%;
+          }
+        `}
       >
         <motion.img
           variants={variants}
@@ -200,6 +240,11 @@ const Case29: React.FC = () => {
         href="https://open.spotify.com/playlist/6yp4JrTTED0h1JoghpCiPq?si=9393902cf26c43a2"
         target="_blank"
         rel="noreferrer"
+        css={css`
+          @media screen and (max-width: 1000px) and (min-width: 740px) {
+            left: 10%;
+          }
+        `}
       >
         <motion.img
           variants={variants}
@@ -223,6 +268,11 @@ const Case29: React.FC = () => {
         href="https://youtube.com/playlist?list=PLQdJJo-bGIWIVdeamzP3ZWqqeJ6J_aQbm"
         target="_blank"
         rel="noreferrer"
+        css={css`
+          @media screen and (max-width: 1000px) and (min-width: 740px) {
+            left: 18%;
+          }
+        `}
       >
         <motion.img
           variants={variants}

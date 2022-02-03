@@ -35,19 +35,19 @@ const CardSection: React.FC = () => {
   })
 
   const goToPage1 = () => {
-    router.push("/museum?q=birthofjazz")
+    router.push("/museumhall?q=birthofjazz")
   }
 
   const goToPage2 = () => {
-    router.push("/museum?q=thejazzage")
+    router.push("/museumhall?q=thejazzage")
   }
 
   const goToPage3 = () => {
-    router.push("/museum?q=jazzdiaspora")
+    router.push("/museumhall?q=jazzdiaspora")
   }
 
   const goToPage4 = () => {
-    router.push("/museum?q=jazzinindonesia")
+    router.push("/museumhall?q=jazzinindonesia")
   }
 
   return (
