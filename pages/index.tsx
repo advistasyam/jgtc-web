@@ -25,7 +25,7 @@ export default function Home() {
       {/* Kitabisa is outdated in 1/10/2022, changed with sponsor page */}
       {/* <Kitabisa /> */}
 
-      <SponsorSection />
+      {/* <SponsorSection /> */}
 
       <PastLineUp />
 
