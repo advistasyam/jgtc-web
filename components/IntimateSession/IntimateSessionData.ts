@@ -44,4 +44,34 @@ export const IntimateSessionData = [
     url: "/images/IntimateSession/card/soulvibe.jpg",
     alt: "Soulvibe",
   },
+  {
+    name: "Autocomplete Interview with Reality Club | IndiHome Presents Intimate Session",
+    line1:
+      "Welcome to the fourth episode of IndiHome presents JGTC Intimate Session! JGTC Intimate Session is a series where we uncover the untold stories of figures in the jazz industry. In this episode, we welcome Reality Club, an Indonesian Alternative - Indie Rock band!",
+    line2:
+      "This month, JGTC Intimate Session welcomes Reality Club, an indie rock band based in Jakarta. In this episode of intimate session, Reality Club answers the web’s most searched questions about themselves. In addition to all of that amusement, Reality Club will also answer a series of lively and personal questions that will test their knowledge on their relationship. Join us on this fun-filled spectacle as Reality Club reveals their true colors.",
+    ig: "https://www.instagram.com/realityclub/",
+    twitter: "https://twitter.com/reality_club",
+    youtube: "https://www.youtube.com/c/REALITYCLUB",
+    video:
+      "https://youtu.be/BiV77GlyE3U",
+    airtime: "November 24, 2021",
+    url: "/images/IntimateSession/card/fathia.png",
+    alt: "Fathia",
+  },
+  {
+    name: "Breakdown the Musician with Rahmania Astrini | IndiHome Presents Intimate Session",
+    line1:
+      "Astri, a young singer and songwriter specializing in R&B and soul, joined us as our last guest artist to round up the series. Sit tight as Astri delivers the personal and unique backstories of her famous titles such as It's Amazing and Runaway, as well as her latest release: Butterfly.",
+    line2:
+      "Astri also discussed how she rose into a musical career by covering popular songs on social media. Apart from her charming trait, her delicate and melodious voice will take your breath away. So, don't miss our latest episode of Intimate Session!",
+    ig: "https://www.instagram.com/rahmaniaastrini/",
+    twitter: "https://twitter.com/AstriniRahmania",
+    youtube: "https://www.youtube.com/c/REALITYCLUB",
+    video:
+      "https://youtu.be/Al3Ryb3LPOk",
+    airtime: "December 18, 2021",
+    url: "/images/IntimateSession/card/rahma.png",
+    alt: "Rahma",
+  },
 ]

@@ -22,7 +22,7 @@ const programsArrowButton = {
 
 const programsMenuVariants = {
   opened: {
-    height: "170px",
+    height: "210px",
     left: "-20px",
     opacity: 1
   },
