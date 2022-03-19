@@ -91,15 +91,19 @@ const MainPage = () => {
           </div>
         </div>
         <div tw="mt-6 md:mt-12" />
-        <div tw="container mx-auto">
+        <div tw="container mx-auto flex flex-col items-center justify-center">
           <div
             css={css`
               position: relative;
               padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+              width: 80%;
+              height: 80%;
             `}
           >
             <ReactPlayer
-              url={"https://youtu.be/xtnhmqd4URw"}
+            //   url={"https://youtu.be/xtnhmqd4URw"}
+            url="https://www.youtube.com/watch?v=f2JuxM-snGc&ab_channel=LordeVEVO"
+            // url="https://www.youtube.com/watch?v=pstVCGyaUBM&ab_channel=LordeVEVO"
               controls={true}
               tw="absolute top-0 left-0"
               width="100%"
@@ -114,7 +118,7 @@ const MainPage = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <img src={festivalData[currentImage].src} alt="" tw="h-[250px]" />
+              <img src={festivalData[currentImage].src} alt="" tw="sm:h-[250px]" />
             </a>
           </div>
         </div>
