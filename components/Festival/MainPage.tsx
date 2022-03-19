@@ -2,6 +2,8 @@ import { css } from "twin.macro"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import ReactPlayer from "react-player/youtube"
+import { festivalData } from "./festivalData"
+import { useState, useEffect } from "react"
 
 const MainPage = () => {
   const wrapperVariants = {
@@ -28,6 +30,24 @@ const MainPage = () => {
     threshold: 0.1,
     triggerOnce: true,
   })
+
+  const [currentImage, setCurrentImage] = useState(
+    Math.floor(Math.random() * 5)
+  )
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      if (currentImage === 4) {
+        setCurrentImage(0)
+      } else {
+        setCurrentImage(currentImage + 1)
+      }
+    }, 4000)
+
+    return () => clearInterval(intervalId)
+  }, [currentImage])
+
+  console.log(currentImage)
 
   return (
     <>
@@ -79,14 +99,23 @@ const MainPage = () => {
             `}
           >
             <ReactPlayer
-              url={
-                "https://www.youtube.com/watch?v=6Cp6mKbRTQY&ab_channel=AviciiOfficialVEVO"
-              }
+              url={"https://youtu.be/xtnhmqd4URw"}
               controls={true}
               tw="absolute top-0 left-0"
               width="100%"
               height="100%"
             />
+          </div>
+
+          <div tw="flex items-center justify-center w-[100%]">
+            <a
+              tw="flex items-center justify-center mt-12"
+              href={festivalData[currentImage].url}
+              target="_blank"
+              rel="norefferer"
+            >
+              <img src={festivalData[currentImage].src} alt="" tw="h-[250px]" />
+            </a>
           </div>
         </div>
       </div>
