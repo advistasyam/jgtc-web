@@ -17,7 +17,7 @@ const festivalData = [
   },
   {
     src: "/images/Festival/kemenparekraf.png",
-    url: "https://kemenparekraf.go.id/",
+    url: "https://www.indonesia.travel/event/id/home",
   },
 ]
 export { festivalData }
