@@ -30,7 +30,7 @@ const Modals: React.FC<ModalsProps> = ({
         {/* @ts-ignore */}
         <Dialog
           as="div"
-          tw="fixed inset-0 z-50 overflow-y-auto"
+          tw="fixed inset-0 z-[200] overflow-y-auto"
           onClose={closeModal}
         >
           <div tw="min-h-screen px-4 text-center flex items-center justify-center">
