@@ -101,9 +101,7 @@ const MainPage = () => {
             `}
           >
             <ReactPlayer
-            //   url={"https://youtu.be/xtnhmqd4URw"}
-            url="https://www.youtube.com/watch?v=f2JuxM-snGc&ab_channel=LordeVEVO"
-            // url="https://www.youtube.com/watch?v=pstVCGyaUBM&ab_channel=LordeVEVO"
+              url={"https://youtu.be/xtnhmqd4URw"}
               controls={true}
               tw="absolute top-0 left-0"
               width="100%"
