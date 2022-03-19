@@ -112,7 +112,7 @@ const MainPage = () => {
               tw="flex items-center justify-center mt-12"
               href={festivalData[currentImage].url}
               target="_blank"
-              rel="norefferer"
+              rel="noreferrer"
             >
               <img src={festivalData[currentImage].src} alt="" tw="h-[250px]" />
             </a>
