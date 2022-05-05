@@ -164,11 +164,6 @@ const Navbar: React.FC = () => {
               <p tw="text-white cursor-pointer">PARTNERS</p>
             </Link>
           </div>
-          <div tw="hidden md:block">
-            <Link href="/about" passHref>
-              <p tw="text-white cursor-pointer">ABOUT</p>
-            </Link>
-          </div>
         </div>
 
         <SocialMedia />
@@ -280,17 +275,6 @@ const Navbar: React.FC = () => {
           <Link href="/partners" passHref>
             <p tw="text-white text-left py-2 pl-2 font-condensedmedium">
               Partners
-            </p>
-          </Link>
-          <div
-            tw="bg-white w-full opacity-50"
-            css={css`
-              height: 0.7px;
-            `}
-          />
-          <Link href="/about" passHref>
-            <p tw="text-white text-left py-2 pl-2 font-condensedmedium">
-              About
             </p>
           </Link>
           <div
