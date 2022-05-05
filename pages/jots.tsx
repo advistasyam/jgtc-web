@@ -1,6 +1,5 @@
 import "twin.macro"
 import Head from "next/head"
-import { Navbar } from "@components/Navbar"
 import { Footer } from "@components/Footer"
 import { JotsHeader } from "@components/Jots/JotsHeader"
 import { CardSection } from "@components/Jots/CardSection"

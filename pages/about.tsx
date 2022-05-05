@@ -1,5 +1,6 @@
 import Head from "next/head"
 import "twin.macro"
+import { Footer } from "@components/Footer"
 
 export default function About() {
   return (
@@ -10,10 +11,10 @@ export default function About() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div tw="container mx-auto flex flex-col mt-40">
-        <h1 tw="text-center text-5xl text-orangejeruk font-drukwide">
+        <h1 tw="text-center text-3xl md:text-5xl text-orangejeruk font-drukwide">
           ABOUT US
         </h1>
-        <div tw="flex flex-row mt-12">
+        <div tw="container mx-auto px-6 md:px-0 flex flex-col md:flex-row mt-12 mb-12 md:mb-0">
           <img src="/images/Footer/LOGO.png" alt="" tw="w-[350px]" />
           <div tw="flex items-center justify-start">
             <div tw="flex flex-col space-y-6 font-druk">
@@ -35,6 +36,10 @@ export default function About() {
           </div>
         </div>
       </div>
+
+      <Footer
+        addons={true}
+      />
     </>
   )
 }
