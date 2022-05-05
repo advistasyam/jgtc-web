@@ -2,12 +2,12 @@ import "twin.macro"
 import React, { useState } from "react"
 import WidthImage from "@components/WidthImage/WidthImage"
 import { Modals } from "@components/Jots/Modals"
-import { JotsData } from "@components/Jots/JotsData"
-import { ImageDecoration } from "@components/Jots/ImageDecoration"
+import { ImageDecoration } from "@components/Partners/ImageDecoration"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { SponsorsData } from "./SponsorsData"
 import { MediaData } from "./MediaData"
+import { Decoration2 } from "./Decoration2"
 
 const CardSection: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -107,6 +107,7 @@ const CardSection: React.FC = () => {
 
                             @media screen and (max-width: 767px) {
                                 margin: 15px;
+                                flex: 29%;
                             }
                         `}
                 />
@@ -125,23 +126,18 @@ const CardSection: React.FC = () => {
         </div>
       </div>
 
-      <motion.h1
-        tw="font-drukwide text-darkblue font-bold text-xl sm:text-2xl md:text-5xl xl:text-6xl text-center mt-24"
-        initial={"initial"}
-        animate={inView ? "animate" : "initial"}
-        variants={wrapperVariants}
-        transition={{ duration: 2, ease: "easeOut" }}
-      >
-        MEDIA PARTNER
-      </motion.h1>
-      <div tw="mt-6 md:mt-12" />
+      <div tw="relative overflow-hidden">
+        <h1 tw="font-drukwide text-darkblue font-bold text-xl sm:text-2xl md:text-5xl xl:text-6xl text-center mt-48">
+          MEDIA PARTNER
+        </h1>
+        <div tw="mt-6 md:mt-12" />
 
-      <div tw="container mx-auto">
-        <WidthImage
-          url="/images/Partners/Media/prambors.png"
-          alt=""
-          width="250"
-          cssextend={`
+        <div tw="container mx-auto">
+          <WidthImage
+            url="/images/Partners/Media/prambors.png"
+            alt=""
+            width="250"
+            cssextend={`
                             div {
                                 @media screen and (max-width: 1279px) {
                                     width: 250px;
@@ -160,16 +156,16 @@ const CardSection: React.FC = () => {
                             justify-content: center;
                             align-items: center;
                         `}
-        />
-        <div tw="flex flex-row flex-wrap justify-center w-full">
-          {MediaData.map((val, index) => {
-            return (
-              <WidthImage
-                key={index}
-                url={val}
-                alt=""
-                width="250"
-                cssextend={`
+          />
+          <div tw="flex flex-row flex-wrap justify-center w-full">
+            {MediaData.map((val, index) => {
+              return (
+                <WidthImage
+                  key={index}
+                  url={val}
+                  alt=""
+                  width="250"
+                  cssextend={`
                             div {
                                 @media screen and (max-width: 1279px) {
                                     width: 250px;
@@ -181,20 +177,24 @@ const CardSection: React.FC = () => {
                             margin: 20px;
 
                             @media screen and (max-width: 767px) {
-                                margin: 10px;
+                                margin: 15px;
+                                flex: 29%;
                             }
                         `}
-              />
-            )
-          })}
+                />
+              )
+            })}
+          </div>
         </div>
-      </div>
 
-      <div tw="container mx-auto mt-12 flex flex-col space-y-2 justify-center items-center text-white text-lg md:text-3xl">
-        <p tw="text-base md:text-xl">For partnership please contact:</p>
-        <p>publication.jgtc@gmail.com</p>
-        <p>or</p>
-        <p>executive@jgtc-festival.com</p>
+        <div tw="container mx-auto mt-12 flex flex-col space-y-2 justify-center items-center text-white text-lg md:text-3xl">
+          <p tw="text-base md:text-xl">For partnership please contact:</p>
+          <p>publication.jgtc@gmail.com</p>
+          <p>or</p>
+          <p>executive@jgtc-festival.com</p>
+        </div>
+
+        <Decoration2 />
       </div>
 
       <Modals
